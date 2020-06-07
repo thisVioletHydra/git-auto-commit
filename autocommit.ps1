@@ -25,7 +25,7 @@ try {
   
   function _UPLOAD([String]$str) {
     # Clear-Host;
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor White;
+    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
     git commit -am "⭐ Auto-Commit $time";
     git push; $br;
   } 
