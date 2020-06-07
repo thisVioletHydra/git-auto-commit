@@ -6,13 +6,9 @@ try {
   $br = "";
   $time = Get-Date;
   $gitStatus = git status -s;
-  $emptyGit = $gitStatus.Length;
-#   param (
-#     [ValidateLength(1,10)]
-#     [parameter(Mandatory=$true)]
-#     [string]
-#     $emptyGit
-# )
+  $lens = $gitStatus | Measure-Object;
+  $emptyGit = $lens.Count
+  
   $gitLog = git log --stat --graph -1;
   "----------------";
   $length = ($gitStatus).Length
