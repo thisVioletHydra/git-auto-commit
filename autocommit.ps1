@@ -43,4 +43,5 @@ try {
 }
 catch {
   # _warn("🔴 error"); $br;
+  Write-Warning $Error
 }
