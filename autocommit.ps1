@@ -38,11 +38,11 @@ if ($gitEmpty -gt 0) {
   try {
     # $ErrorActionPrefference = 'Stop'
     Push-GitAutoCommit
-    Write-ColorizedMSG 'Done'
- } catch {
+    Write-ColorizedMSG -str "🟢 SUCCESS!" -MSGtype 'DONE'
+  }
+  catch {
     Write-ColorizedMSG "Shit happend : $_"
- }
-  Write-ColorizedMSG -str "🟢 SUCCESS!" -MSGtype 'DONE'
+  }
 }
 else { 
   Clear-Host
