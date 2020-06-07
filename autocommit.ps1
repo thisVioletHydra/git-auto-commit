@@ -2,7 +2,6 @@ $gitLog = git log --stat --graph -1
 $gitStatus = git status -s
 $gitEmpty = "$gitStatus".Length
 
-
 function Write-ColorizedMSG {
   param(
     [String]$str,
