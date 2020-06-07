@@ -6,13 +6,12 @@ try {
   $br = "";
   $time = Get-Date;
   $gitLog = git log --stat --graph -1;
-  $gitCommit = git commit -am "⭐ Auto-Commit $time";
+  $gitCommit = git commit -am '⭐ Auto-Commit $time';
   $gitStatus = git status -s;
   $gitEmpty = "$gitStatus".Length ?? 0;
 
   function _info([String]$str, [String]$str2 = $null) {
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; 
-    $br;
+    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; $br;
   } 
   
   function _done([String]$str) {
