@@ -6,12 +6,12 @@ try {
   $br = "";
   $time = Get-Date;
   $gitLog = git log --stat --graph -1;
+  $gitCommit = git commit -am "⭐ Auto-Commit $time";
   $gitStatus = git status -s;
   $gitEmpty = "$gitStatus".Length ?? 0;
 
-  function _info([String]$str, [String]$str2) {
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan + $str2;
-    #  $br;
+  function _info([String]$str, [String]$str2 = $null) {
+    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; $br;
   } 
   
   function _done([String]$str) {
@@ -29,7 +29,7 @@ try {
   
   # $gitEmpty -or $null
   if ($gitEmpty -gt 0) {
-    _info "✈️ Uploading files"; git commit -am "⭐ Auto-Commit $time"; git push; $br;
+    _info "✈️ Uploading files" $gitCommit; git push; $br;
     _done("🟢 SUCCESS!"); $br;
   }
   else { 
