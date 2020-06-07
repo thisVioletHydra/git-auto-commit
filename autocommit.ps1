@@ -9,6 +9,7 @@ $br
 
 "=====  New Files  ====="  
 $state = git status -s 
+$state
 $br
 
 if ($state.Length) {
