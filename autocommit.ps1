@@ -17,7 +17,7 @@ function _warn {
   Write-Host "[$time] [WARN]:" $str -ForegroundColor DarkYellow
 } 
 
-Clear-Host
+Clear-Host;
 
 _info("🙄 Last Commit"); $gitLog; $br;
 _info("🤔 New Files"); $gitStatus; $br;
@@ -27,10 +27,10 @@ if ($emptyGit) {
   _done("🟢 SUCCESS!"); $br;
 }
 else { 
-  Clear-Host 
+  Clear-Host;
   _warn("🔴 Nothing happened"); $br;
 };
 
 #"debug: $state" 
-Read-Host "Press any key to continue ..."
-Exit
+Read-Host "Press any key to continue ...";
+Exit;
