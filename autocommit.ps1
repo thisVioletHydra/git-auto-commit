@@ -1,6 +1,7 @@
 $gitLog = git log --stat --graph -1
 $gitStatus = git status -s
 $gitEmpty = "$gitStatus".Length
+$ErrorActionPrefference = 'Start'
 
 function Write-ColorizedMSG {
   param(
@@ -16,7 +17,7 @@ function Write-ColorizedMSG {
     'DONE' { $Color = "Green" }
     'WARN' { $Color = "Yellow" }
     default {
-      Write-Host "Impossible MSGType selected"
+      Write-Host "`r`nImpossible MSGType selected"
       $Color = "Magenta"
     }
   }
@@ -34,7 +35,13 @@ Write-ColorizedMSG -str "🤔 New Files" -MSGtype 'INFO' -obj $gitStatus
 
 if ($gitEmpty -gt 0) {
   Write-ColorizedMSG -str "✈️ Uploading files" -MSGtype 'INFO'
-  Push-GitAutoCommit
+  try {
+    $ErrorActionPrefference = 'Stop'
+    Push-GitAutoCommit
+    Write-ColorizedMSG 'Done'
+ } catch {
+    Write-ColorizedMSG "Shit happend : $_"
+ }
   Write-ColorizedMSG -str "🟢 SUCCESS!" -MSGtype 'DONE'
 }
 else { 
