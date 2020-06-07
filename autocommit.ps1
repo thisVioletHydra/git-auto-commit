@@ -1,7 +1,7 @@
 $gitLog = git log --stat --graph -1
 $gitStatus = git status -s
 $gitEmpty = "$gitStatus".Length
-$ErrorActionPrefference = 'Start'
+
 
 function Write-ColorizedMSG {
   param(
