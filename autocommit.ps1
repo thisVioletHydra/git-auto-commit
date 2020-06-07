@@ -23,7 +23,7 @@ if ($state.Length) {
   $br
 }
 else { 
-  Clear-Host 
+  # Clear-Host 
   "=== ❌ Nothing happened ===" 
   "=== Upload is Aborted! ===" 
   $br
