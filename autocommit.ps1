@@ -8,16 +8,16 @@ Clear-Host;
 
 function _info {
   param ( [string]$str )
-  Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan
+  Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
 } 
 function _done {
   param ( [string]$str )
-  Write-Host "[$time] [DONE]:" $str -ForegroundColor Green
+  Write-Host "[$time] [DONE]:" $str -ForegroundColor Green;
 } 
 function _warn {
   param ( [string]$str )
   Clear-Host;
-  Write-Warning "[$time] [WARN]:" $str 
+  Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
 } 
 
 _info("🙄 Last Commit"); $gitLog; $br;
