@@ -21,9 +21,6 @@ if ($state.Length) {
 
   "=====  SUCCESS!  ====="  
   $br
-  # "debug: $state" 
-  Read-Host "Press any key to continue ... "
-  Exit 
 }
 else { 
   Clear-Host 
