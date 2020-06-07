@@ -19,13 +19,13 @@ try {
   } 
   
   function _warn( [String]$str ) {
-    # Clear-Host;
+    Clear-Host;
     Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
   } 
   
   function _UPLOAD([String]$str) {
     # Clear-Host;
-    Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
+    Write-Host "[$time] [INFO]:" $str -ForegroundColor White;
     git commit -am "⭐ Auto-Commit $time";
     git push; $br;
   } 
