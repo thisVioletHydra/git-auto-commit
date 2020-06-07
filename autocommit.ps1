@@ -11,7 +11,7 @@ try {
   $gitEmpty = "$gitStatus".Length ?? 0;
 
   function _info([String]$str, [System.Object]$obj = $null) {
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; $br;
+    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $obj; $br;
   } 
   
   function _done([String]$str) {
