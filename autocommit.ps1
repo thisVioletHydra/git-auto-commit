@@ -14,20 +14,23 @@ try {
 #     $emptyGit
 # )
   $gitLog = git log --stat --graph -1;
+  "----------------";
+  $length = ($gitStatus).Length
+  "sum" + $length
+  "----------------";
   
- 
-  # if ($emptyGit) {
-  #   $length = ($gitStatus).Length
-  #   "sum" + $length
-  #   $gitStatus.GetType()
-  #   "''.Length " + ''.Length
-  #   "($null).Length " + ($null).Length
-  #   "'$Null'.Length " + '$Null'.Length
-  #   "----------------";
-  #   "Debug: $emptyGit";
-  #   "----------------"; $br
-  #   throw 'The file does not exist'
-  # }
+  if ($emptyGit -le 0) {
+    $length = ($gitStatus).Length
+    "sum" + $length
+    $gitStatus.GetType()
+    "''.Length " + ''.Length
+    "($null).Length " + ($null).Length
+    "'$Null'.Length " + '$Null'.Length
+    "----------------";
+    "Debug: $emptyGit";
+    "----------------"; $br
+    throw 'The file does not exist'
+  }
   
  
   
