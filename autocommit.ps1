@@ -4,6 +4,13 @@ $gitStatus = git status -s
 $emptyGit = $gitStatus.Length
 $gitLog = git log --stat --graph -1 
 
+function info {
+  param (
+    [string]$info
+  )
+  Write-Host "[$time] [INFO]" $info -ForegroundColor DarkGreen
+} 
+
 Clear-Host
 
 "[$time] [INFO] 🙄 Last Commit"
@@ -20,7 +27,8 @@ if ($emptyGit) {
   git push 
   $br
 
- Write-Host "[$time] [INFO] 🟢 SUCCESS!"  -ForegroundColor DarkGreen
+  info("🟢 SUCCESS!")
+  # Write-Host "[$time] [INFO] 🟢 SUCCESS!"  -ForegroundColor DarkGreen
   $br
 }
 else { 
