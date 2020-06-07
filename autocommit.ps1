@@ -7,7 +7,7 @@ $gitLog = git log --stat --graph -1;
 Clear-Host;
 
 function _info {
-  param( [string]$str, [variable]$variable )
+  param( [string]$str, [Argument]$variable )
   Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
   $variable;
   $br;
