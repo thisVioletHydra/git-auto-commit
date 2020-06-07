@@ -15,13 +15,11 @@ try {
   "sum" + $length
   "----------------";
   
-  if ($emptyGit -le 0) {
+  if ($emptyGit -le 100) {
 
     "sum" + $length
     $gitStatus.GetType()
-    "''.Length " + ''.Length
-    "($null).Length " + ($null).Length
-    "'$Null'.Length " + '$Null'.Length
+ 
     "----------------";
     "Debug: $emptyGit";
     "----------------"; $br
