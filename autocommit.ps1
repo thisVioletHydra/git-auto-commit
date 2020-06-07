@@ -6,8 +6,7 @@ try {
   $br = "";
   $time = Get-Date;
   $gitStatus = git status -s;
-  $lens = $gitStatus | Measure-Object;
-  $emptyGit = $lens.Count
+  $emptyGit = $gitStatus.Length ?? 0;
   
   $gitLog = git log --stat --graph -1;
   
