@@ -21,7 +21,7 @@ function Write-ColorizedMSG {
       $Color = "Magenta"
     }
   }
-  Write-Host "[$(Get-Date)][$MSGtype]: $str" -ForegroundColor $Color
+  Write-Host "`r`n[$(Get-Date)][$MSGtype]: $str" -ForegroundColor $Color
   $obj | Out-Host
 }
 
@@ -46,6 +46,6 @@ if ($gitEmpty -gt 0) {
 }
 else { 
   Clear-Host
-  Write-ColorizedMSG -str "🔴 Nothing happened" -MSGtype 'WARN'
+  Write-ColorizedMSG -str "`r`n🔴 Nothing happened" -MSGtype 'WARN'
 }
 Exit
