@@ -23,13 +23,20 @@ try {
     Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
   } 
   
+  function _UPLOAD([String]$str) {
+    # Clear-Host;
+    Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
+    git commit -am "⭐ Auto-Commit $time";
+    git push; $br;
+  } 
+  
   _info "🙄 Last Commit" $gitLog   
   _info "🤔 New Files" $gitStatus 
   _info "debug " $gitEmpty
   
   # $gitEmpty -or $null
   if ($gitEmpty -gt 0) {
-    _info "✈️ Uploading files";git commit -am "⭐ Auto-Commit $time"; git push; $br;
+    _UPLOAD "✈️ Uploading files";
     _done("🟢 SUCCESS!"); $br;
   }
   else { 
