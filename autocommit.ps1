@@ -1,8 +1,8 @@
-$br = ""
-$time = Get-Date
-$gitStatus = git status -s 
-$emptyGit = $gitStatus.Length
-$gitLog = git log --stat --graph -1 
+$br = "";
+$time = Get-Date;
+$gitStatus = git status -s;
+$emptyGit = $gitStatus.Length;
+$gitLog = git log --stat --graph -1;
 
 function _info {
   param ( [string]$str )
@@ -19,26 +19,17 @@ function _warn {
 
 Clear-Host
 
-_info("🙄 Last Commit") $gitLog $br
-_info("🤔 New Files")
-$gitStatus
-$br
+_info("🙄 Last Commit"); $gitLog; $br;
+_info("🤔 New Files"); $gitStatus; $br;
 
 if ($emptyGit) {
-  _info("✈️ Uploading files")
-  git commit -am"⭐ Auto-Commit $time" 
-  git push 
-  $br
-
-  _done("🟢 SUCCESS!")
-  $br
+  _info("✈️ Uploading files"); git commit -am"⭐ Auto-Commit $time"; git push; $br;
+  _done("🟢 SUCCESS!"); $br;
 }
 else { 
   Clear-Host 
-  _warn("🔴 Nothing happened")
-  $br
+  _warn("🔴 Nothing happened"); $br;
 };
-
 
 #"debug: $state" 
 Read-Host "Press any key to continue ..."
