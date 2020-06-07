@@ -18,7 +18,7 @@ function _done([String]$str) {
 } 
 
 function _warn( [String]$str ) {
-  Clear-Host;
+  # Clear-Host;
   Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
 } 
 
