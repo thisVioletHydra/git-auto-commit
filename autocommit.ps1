@@ -24,6 +24,7 @@ function _warn( [String]$str ) {
 
 _info "🙄 Last Commit" $gitLog   
 _info "🤔 New Files" $gitStatus 
+_info "debug " $emptyGit
 
 if ($emptyGit) {
   _info "✈️ Uploading files"; git commit -am "⭐ Auto-Commit $time"; git push; $br;
