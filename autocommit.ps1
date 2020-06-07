@@ -46,6 +46,6 @@ if ($gitEmpty -gt 0) {
 }
 else { 
   Clear-Host
-  Write-ColorizedMSG -str "`r`n🔴 Nothing happened" -MSGtype 'WARN'
+  Write-ColorizedMSG -str "🔴 Nothing happened`r`n" -MSGtype 'WARN'
 }
 Exit
