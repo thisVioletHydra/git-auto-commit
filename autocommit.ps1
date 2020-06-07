@@ -6,27 +6,26 @@ $gitLog = git log --stat --graph -1
 
 Clear-Host
 
-"[$time] 🙄 Last Commit"
+"[$time] [INFO] 🙄 Last Commit"
 $gitLog
 $br
 
-"[$time] 🤔 New Files"  
+"[$time] [INFO] 🤔 New Files"  
 $gitStatus
 $br
 
 if ($emptyGit) {
-  "[$time] ✈️ Uploading files"  
+  "[$time] [INFO] ✈️ Uploading files"  
   git commit -am"⭐ Auto-Commit $time" 
   git push 
   $br
 
-  "[$time] 🟢 SUCCESS!"  
+ Write-Host "[$time] [INFO] 🟢 SUCCESS!"  -ForegroundColor DarkGreen
   $br
 }
 else { 
   Clear-Host 
-  "[$time] 🔴 Nothing happened" 
-  "[$time] Upload is Aborted!" 
+  "[$time] [WARN] 🔴 Nothing happened" 
   $br
 };
 
