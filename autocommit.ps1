@@ -10,13 +10,14 @@ try {
   $gitLog = git log --stat --graph -1;
   
  
-  if ($emptyGit) {
-    Write-Error  
+  if ($emptyGit -eq 0) {
+    "----------------";
+    "Debug: $emptyGit";
+    "----------------"; $br
+    throw 'The file does not exist'
   }
   
-  "----------------";
-  "Debug: $emptyGit";
-  "----------------"; $br
+ 
   
   
   function _info([String]$str, [String]$str2 = $null) {
@@ -51,5 +52,5 @@ try {
 }
 catch {
   # _warn("🔴 error"); $br;
-  Write-Warning 
+  Write-Warning $_
 }
