@@ -20,9 +20,9 @@ $br
 $br
 
 "Press any key to continue ... "
-Pause 
+Pause | Out-Null
 if ($log) { Exit } else { Clear-Host };
 "=====  Nothing happened  =====" 
 "=====  Upload is Aborted!  =====" 
-Pause
+Pause | Out-Null
 Exit
