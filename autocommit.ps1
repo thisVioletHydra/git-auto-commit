@@ -10,7 +10,7 @@ try {
   $gitEmpty = "$gitStatus".Length ?? 0;
 
   function _info([String]$str, [String]$str2) {
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2;
+    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan + $str2;
     #  $br;
   } 
   
