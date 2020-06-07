@@ -9,11 +9,11 @@ $gitLog = git log --stat --graph -1;
 
 Clear-Host;
 
-function _info( $str , $obj ) {
-  Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $obj; $br;
+function _info([String]$str, [String]$str2) {
+  Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; $br;
 } 
 
-function _done( [String]$str ) {
+function _done([String]$str) {
   Write-Host "[$time] [DONE]:" $str -ForegroundColor Green;
 } 
 
@@ -22,11 +22,11 @@ function _warn( [String]$str ) {
   Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
 } 
 
-_info("🙄 Last Commit", $gitLog);  
-_info("🤔 New Files", $gitStatus);
+_info "🙄 Last Commit" $gitLog   
+_info "🤔 New Files" $gitStatus 
 
 if ($emptyGit) {
-  _info("✈️ Uploading files"); git commit -am "⭐ Auto-Commit $time"; git push; $br;
+  _info "✈️ Uploading files"; git commit -am "⭐ Auto-Commit $time"; git push; $br;
   _done("🟢 SUCCESS!"); $br;
 }
 else { 
