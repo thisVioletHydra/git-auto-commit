@@ -19,10 +19,11 @@ $br
 "=====  SUCCESS!  ====="  
 $br
 
-"Press any key to continue ... "
-Pause 
+Read-Host "Press any key to continue ... "
+
 if ($state) { Exit } else { Clear-Host };
 "=====  Nothing happened  =====" 
 "=====  Upload is Aborted!  =====" 
- 
+
+Pause
 Exit
