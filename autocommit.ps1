@@ -23,11 +23,12 @@ _info("🙄 Last Commit"); $gitLog; $br;
 _info("🤔 New Files"); $gitStatus; $br;
 
 if ($emptyGit) {
-  _info("✈️ Uploading files"); git commit -am"⭐ Auto-Commit $time"; git push; $br;
+  _info("✈️ Uploading files"); git commit -am "⭐ Auto-Commit $time"; git push; $br;
   _done("🟢 SUCCESS!"); $br;
 }
 else { 
   Clear-Host;
+  Write-Warning "This is only a test warning."
   _warn("🔴 Nothing happened"); $br;
 };
 
