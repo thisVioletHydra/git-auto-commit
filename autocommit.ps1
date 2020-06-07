@@ -4,7 +4,7 @@ Set-StrictMode -Version Latest
 $br = "";
 $time = Get-Date;
 $gitStatus = git status -s;
-$emptyGit = $gitStatus.Length;
+$emptyGit = $gitStatus.Length  
 $gitLog = git log --stat --graph -1;
 
 Clear-Host;
@@ -26,7 +26,7 @@ _info "🙄 Last Commit" $gitLog
 _info "🤔 New Files" $gitStatus 
 _info "debug " $emptyGit
 
-if ($emptyGit) {
+if ($emptyGit -or $null) {
   _info "✈️ Uploading files"; git commit -am "⭐ Auto-Commit $time"; git push; $br;
   _done("🟢 SUCCESS!"); $br;
 }
