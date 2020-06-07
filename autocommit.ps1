@@ -19,6 +19,7 @@ $br
 "=====  SUCCESS!  ====="  
 $br
 
+"debug: $state" 
 Read-Host "Press any key to continue ... "
 
 if ($state) { Exit } else { Clear-Host };
