@@ -29,7 +29,7 @@ try {
   
   # $gitEmpty -or $null
   if ($gitEmpty -gt 0) {
-    _info "✈️ Uploading files"; $gitCommit; git push; $br;
+    _info "✈️ Uploading files";git commit -am "⭐ Auto-Commit $time"; git push; $br;
     _done("🟢 SUCCESS!"); $br;
   }
   else { 
