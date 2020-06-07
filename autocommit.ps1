@@ -7,8 +7,10 @@ $gitLog = git log --stat --graph -1;
 Clear-Host;
 
 function _info {
-  param ( [string]$str )
+  param ( [string]$str, [any]$any )
   Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
+  $any;
+  $br;
 } 
 function _done {
   param ( [string]$str )
@@ -20,7 +22,7 @@ function _warn {
   Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
 } 
 
-_info("🙄 Last Commit"); $gitLog; $br;
+_info("🙄 Last Commit", $gitLog);  
 _info("🤔 New Files"); $gitStatus; $br;
 
 if ($emptyGit) {
