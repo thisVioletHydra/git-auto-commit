@@ -23,7 +23,7 @@ function _warn {
 } 
 
 _info("🙄 Last Commit", $gitLog);  
-_info("🤔 New Files"); $gitStatus; $br;
+_info("🤔 New Files", $gitStatus);
 
 if ($emptyGit) {
   _info("✈️ Uploading files"); git commit -am "⭐ Auto-Commit $time"; git push; $br;
