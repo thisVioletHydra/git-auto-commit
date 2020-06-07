@@ -6,31 +6,31 @@ $gitLog = git log --stat --graph -1
 
 Clear-Host
 
-"=== 🙄 Last Commit ==="
+"[$time] 🙄 Last Commit"
 $gitLog
 $br
 
-"=== 🤔 New Files ==="  
+"[$time] 🤔 New Files"  
 $gitStatus
 $br
 
 if ($emptyGit) {
-  "=== ✈️ Uploading files ==="  
-  git commit -am "⭐ Auto-Commit $time" 
+  "[$time] ✈️ Uploading files"  
+  git commit -am"⭐ Auto-Commit $time" 
   git push 
   $br
 
-  "=== 🟢 SUCCESS! ==="  
+  "[$time] 🟢 SUCCESS!"  
   $br
 }
 else { 
   Clear-Host 
-  "=== 🔴 Nothing happened ===" 
-  "=== Upload is Aborted! ===" 
+  "[$time] 🔴 Nothing happened" 
+  "[$time] Upload is Aborted!" 
   $br
 };
 
 
-# "debug: $state" 
-Read-Host "Press any key to continue ... "
+#"debug: $state" 
+Read-Host"Press any key to continue ..."
 Exit
