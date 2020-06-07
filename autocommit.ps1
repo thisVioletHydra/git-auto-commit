@@ -6,16 +6,28 @@ try {
   $br = "";
   $time = Get-Date;
   $gitStatus = git status -s;
-  $emptyGit = ($gitStatus).Length || 0
+  $emptyGit = $gitStatus.Length;
+#   param (
+#     [ValidateLength(1,10)]
+#     [parameter(Mandatory=$true)]
+#     [string]
+#     $emptyGit
+# )
   $gitLog = git log --stat --graph -1;
   
  
-  if ($emptyGit -eq 0) {
-    "----------------";
-    "Debug: $emptyGit";
-    "----------------"; $br
-    throw 'The file does not exist'
-  }
+  # if ($emptyGit) {
+  #   $length = ($gitStatus).Length
+  #   "sum" + $length
+  #   $gitStatus.GetType()
+  #   "''.Length " + ''.Length
+  #   "($null).Length " + ($null).Length
+  #   "'$Null'.Length " + '$Null'.Length
+  #   "----------------";
+  #   "Debug: $emptyGit";
+  #   "----------------"; $br
+  #   throw 'The file does not exist'
+  # }
   
  
   
