@@ -17,7 +17,7 @@ function _done {
 function _warn {
   param ( [string]$str )
   Clear-Host;
-  Write-Warning "[$time] [WARN]:" $str -ForegroundColor DarkYellow
+  Write-Warning "[$time] [WARN]:" $str 
 } 
 
 _info("🙄 Last Commit"); $gitLog; $br;
