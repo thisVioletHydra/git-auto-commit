@@ -6,7 +6,6 @@ try {
   $br = "";
   $time = Get-Date;
   $gitLog = git log --stat --graph -1;
-  # $gitCommit = git commit -am "⭐ Auto-Commit $time";
   $gitStatus = git status -s;
   $gitEmpty = "$gitStatus".Length ?? 0;
 
@@ -24,7 +23,6 @@ try {
   } 
   
   function _UPLOAD([String]$str) {
-    # Clear-Host;
     Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
     git commit -am "⭐ Auto-Commit $time";
     git push; $br;
@@ -32,17 +30,9 @@ try {
   
   _info "🙄 Last Commit" $gitLog   
   _info "🤔 New Files" $gitStatus 
-  # _info "debug " $gitEmpty
-  
-  # $gitEmpty -or $null
-  if ($gitEmpty -gt 0) {
-    _UPLOAD "✈️ Uploading files";
-    _done("🟢 SUCCESS!");
-  }
-  else { 
-    _warn("🔴 Nothing happened"); 
-  };
-  
+
+  if ($gitEmpty -gt 0) { _UPLOAD "✈️ Uploading files"; _done("🟢 SUCCESS!"); }
+  else { _warn("🔴 Nothing happened"); };
   Exit;
 }
 catch {
