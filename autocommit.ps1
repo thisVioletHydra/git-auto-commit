@@ -1,16 +1,23 @@
 # Set-StrictMode ON
 Set-StrictMode -Version Latest
-
-
+Clear-Host;
 
 try {
   $br = "";
   $time = Get-Date;
   $gitStatus = git status -s;
-  $emptyGit = $gitStatus.Length  
+  $emptyGit = $gitStatus.Length || 0
   $gitLog = git log --stat --graph -1;
   
-  Clear-Host;
+ 
+  if ($emptyGit) {
+    Write-Error  
+  }
+  
+  "----------------";
+  "Debug: $emptyGit";
+  "----------------"; $br
+  
   
   function _info([String]$str, [String]$str2 = $null) {
     Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; $br;
@@ -44,5 +51,5 @@ try {
 }
 catch {
   # _warn("🔴 error"); $br;
-  Write-Warning $Error[0]
+  Write-Warning 
 }
