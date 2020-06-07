@@ -42,5 +42,5 @@ try {
   Exit;
 }
 catch {
-  _warn("🔴 error"); $br;
+  # _warn("🔴 error"); $br;
 }
