@@ -29,7 +29,8 @@ try {
   _info "🤔 New Files" $gitStatus 
   _info "debug " $emptyGit
   
-  if ($emptyGit -or $null) {
+  # $emptyGit -or $null
+  if ($emptyGit -or $false) {
     _info "✈️ Uploading files"; git commit -am "⭐ Auto-Commit $time"; git push; $br;
     _done("🟢 SUCCESS!"); $br;
   }
@@ -43,5 +44,5 @@ try {
 }
 catch {
   # _warn("🔴 error"); $br;
-  Write-Warning $Error
+  Write-Warning $Error[0]
 }
