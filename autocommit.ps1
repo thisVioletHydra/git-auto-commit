@@ -36,7 +36,7 @@ Write-ColorizedMSG -str "🤔 New Files" -MSGtype 'INFO' -obj $gitStatus
 if ($gitEmpty -gt 0) {
   Write-ColorizedMSG -str "✈️ Uploading files" -MSGtype 'INFO'
   try {
-    $ErrorActionPrefference = 'Stop'
+    # $ErrorActionPrefference = 'Stop'
     Push-GitAutoCommit
     Write-ColorizedMSG 'Done'
  } catch {
