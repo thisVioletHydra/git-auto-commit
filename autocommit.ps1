@@ -7,17 +7,17 @@ $gitLog = git log --stat --graph -1;
 Clear-Host;
 
 function _info {
-  param( [string]$str, [Argument]$variable )
+  param( [String]$str, [String]$arg )
   Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
-  $variable;
+  $arg;
   $br;
 } 
 function _done {
-  param( [string]$str )
+  param( [String]$str )
   Write-Host "[$time] [DONE]:" $str -ForegroundColor Green;
 } 
 function _warn {
-  param( [string]$str )
+  param( [String]$str )
   Clear-Host;
   Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
 } 
