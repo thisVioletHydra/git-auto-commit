@@ -4,6 +4,8 @@ $gitStatus = git status -s;
 $emptyGit = $gitStatus.Length;
 $gitLog = git log --stat --graph -1;
 
+Clear-Host;
+
 function _info {
   param ( [string]$str )
   Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan
@@ -14,10 +16,9 @@ function _done {
 } 
 function _warn {
   param ( [string]$str )
-  Write-Host "[$time] [WARN]:" $str -ForegroundColor DarkYellow
+  Clear-Host;
+  Write-Warning "[$time] [WARN]:" $str -ForegroundColor DarkYellow
 } 
-
-Clear-Host;
 
 _info("🙄 Last Commit"); $gitLog; $br;
 _info("🤔 New Files"); $gitStatus; $br;
@@ -27,8 +28,6 @@ if ($emptyGit) {
   _done("🟢 SUCCESS!"); $br;
 }
 else { 
-  Clear-Host;
-  Write-Warning "This is only a test warning."
   _warn("🔴 Nothing happened"); $br;
 };
 
