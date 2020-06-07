@@ -1,4 +1,5 @@
 $br = "";
+$time = Get-Date
 
 Clear-Host
 Clear-History
@@ -14,7 +15,7 @@ $br
 
 if ($state.Length) {
   "=====  Start Upload  ====="  
-  git commit -am '⭐ Auto-Commit' 
+  git commit -am "⭐ Auto-Commit $time" 
   git push 
   $br
 
