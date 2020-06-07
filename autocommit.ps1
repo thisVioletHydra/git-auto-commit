@@ -1,30 +1,31 @@
-$br = "";
+$br = ""
 $time = Get-Date
+$gitStatus = git status -s 
+$emptyGit = $gitStatus.Length
+$gitLog = git log --stat --graph -1 
 
 Clear-Host
-Clear-History
 
 "=== 🙄 Last Commit ==="
-git log --stat --graph -1 
+$gitLog
 $br
 
 "=== 🤔 New Files ==="  
-$state = git status -s 
-$state
+$gitStatus
 $br
 
-if ($state.Length) {
-  "=== ✈️ Start Upload ==="  
+if ($emptyGit) {
+  "=== ✈️ Uploading files ==="  
   git commit -am "⭐ Auto-Commit $time" 
   git push 
   $br
 
-  "=== ✔️ SUCCESS! ==="  
+  "=== 🟢 SUCCESS! ==="  
   $br
 }
 else { 
-  # Clear-Host 
-  "=== ❌ Nothing happened ===" 
+  Clear-Host 
+  "=== 🔴 Nothing happened ===" 
   "=== Upload is Aborted! ===" 
   $br
 };
