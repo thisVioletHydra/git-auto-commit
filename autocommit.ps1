@@ -15,12 +15,12 @@ try {
   } 
   
   function _done([String]$str) {
-    Write-Host "[$time] [DONE]:" $str -ForegroundColor Green;
+    Write-Host "[$time] [DONE]:" $str -ForegroundColor Green; $br;
   } 
   
   function _warn( [String]$str ) {
     Clear-Host;
-    Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
+    Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow; $br;
   } 
   
   function _UPLOAD([String]$str) {
@@ -32,15 +32,15 @@ try {
   
   _info "🙄 Last Commit" $gitLog   
   _info "🤔 New Files" $gitStatus 
-  _info "debug " $gitEmpty
+  # _info "debug " $gitEmpty
   
   # $gitEmpty -or $null
   if ($gitEmpty -gt 0) {
     _UPLOAD "✈️ Uploading files";
-    _done("🟢 SUCCESS!"); $br;
+    _done("🟢 SUCCESS!");
   }
   else { 
-    _warn("🔴 Nothing happened"); $br;
+    _warn("🔴 Nothing happened"); 
   };
   
   #"debug: $state" 
@@ -48,6 +48,7 @@ try {
   Exit;
 }
 catch {
-  # _warn("🔴 error"); $br;
   Write-Warning $_
+  Read-Host "Press any key to continue ...";
+  Exit;
 }
