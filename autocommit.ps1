@@ -1,42 +1,43 @@
-# Set-StrictMode ON
-Set-StrictMode -Version Latest
-Clear-Host;
+$gitLog = git log --stat --graph -1
+$gitStatus = git status -s
+$gitEmpty = "$gitStatus".Length
 
-try {
-  $br = "";
-  $time = Get-Date;
-  $gitLog = git log --stat --graph -1;
-  $gitStatus = git status -s;
-  $gitEmpty = "$gitStatus".Length ?? 0;
-
-  function _info([String]$str, [System.Object]$obj = $null) {
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $obj; $br;
-  } 
-  
-  function _done([String]$str) {
-    Write-Host "[$time] [DONE]:" $str -ForegroundColor Green; $br;
-  } 
-  
-  function _warn( [String]$str ) {
-    Clear-Host;
-    Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow; $br;
-  } 
-  
-  function _UPLOAD([String]$str) {
-    Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;
-    git commit -am "⭐ Auto-Commit $time";
-    git push; $br;
-  } 
-  
-  _info "🙄 Last Commit" $gitLog   
-  _info "🤔 New Files" $gitStatus 
-
-  if ($gitEmpty -gt 0) { _UPLOAD "✈️ Uploading files"; _done("🟢 SUCCESS!"); }
-  else { _warn("🔴 Nothing happened"); };
-  Exit;
+function Write-ColorizedMSG {
+  param(
+    [String]$str,
+    [Parameter(Mandatory = $false)]
+    [ValidateSet("INFO", "DONE", "WARN")]
+    [string]$MSGtype = "INFO",
+    [Parameter(Mandatory = $false)]
+    [System.Object]$obj = $null
+  )
+  switch ($MSGtype) {
+    'INFO' { $Color = "Cyan" }
+    'DONE' { $Color = "Green" }
+    'WARN' { $Color = "Yellow" }
+    default {
+      Write-Host "Impossible MSGType selected"
+      $Color = "Magenta"
+    }
+  }
+  Write-Host "[$(Get-Date)][$MSGtype]: $str" -ForegroundColor $Color
+  $obj | Out-Host
 }
-catch {
-  Write-Warning $_
-  Read-Host "Press any key to continue ...";
-  Exit;
+
+function Push-GitAutoCommit {
+  git commit -am "⭐️ Auto-Commit $(Get-Date)"
+  git push
+} 
+
+Write-ColorizedMSG -str "🙄 Last Commit" -MSGtype 'INFO' -obj $gitLog
+Write-ColorizedMSG -str "🤔 New Files" -MSGtype 'INFO' -obj $gitStatus
+
+if ($gitEmpty -gt 0) {
+  Write-ColorizedMSG -str "✈️ Uploading files" -MSGtype 'INFO'
+  Push-GitAutoCommit
+  Write-ColorizedMSG -str "🟢 SUCCESS!" -MSGtype 'DONE'
 }
+else { 
+  Write-ColorizedMSG -str "🔴 Nothing happened" -MSGtype ''
+}
+Exit
