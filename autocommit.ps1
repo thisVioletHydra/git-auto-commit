@@ -1,3 +1,6 @@
+# Set-StrictMode ON
+Set-StrictMode -Version Latest
+
 $br = "";
 $time = Get-Date;
 $gitStatus = git status -s;
@@ -6,18 +9,15 @@ $gitLog = git log --stat --graph -1;
 
 Clear-Host;
 
-function _info {
-  param( $str, $obj = "aasda" )
+function _info ( $str , $obj ) {
   Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $obj; $br;
 } 
 
-function _done {
-  param( [String]$str )
+function _done  ( [String]$str ) {
   Write-Host "[$time] [DONE]:" $str -ForegroundColor Green;
 } 
 
-function _warn {
-  param( [String]$str )
+function _warn ( [String]$str ) {
   Clear-Host;
   Write-Host "[$time] [WARN]:" $str -ForegroundColor Yellow;
 } 
