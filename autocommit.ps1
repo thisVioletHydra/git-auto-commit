@@ -19,7 +19,7 @@ function _warn {
 
 Clear-Host
 
-_info("🙄 Last Commit") ; $gitLog ; $br;
+_info("🙄 Last Commit") $gitLog $br
 _info("🤔 New Files")
 $gitStatus
 $br
