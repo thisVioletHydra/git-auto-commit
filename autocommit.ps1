@@ -10,7 +10,7 @@ function _info {
 } 
 function _done {
   param (    [string]$str  )
-  Write-Host "[$time] [DONE]" $str -ForegroundColor DarkGreen
+  Write-Host "[$time] [DONE]" $str -ForegroundColor Green
 } 
 function _warn {
   param (    [string]$str  )
@@ -28,7 +28,7 @@ $gitStatus
 $br
 
 if ($emptyGit) {
-  "[$time] [INFO] ✈️ Uploading files"  
+  _info("✈️ Uploading files")
   git commit -am"⭐ Auto-Commit $time" 
   git push 
   $br
