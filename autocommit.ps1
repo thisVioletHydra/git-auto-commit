@@ -8,7 +8,7 @@ Clear-Host;
 
 function _info {
   param( $str, $obj = "aasda" )
-  Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan;$br; $obj; $br;
+  Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $obj; $br;
 } 
 
 function _done {
