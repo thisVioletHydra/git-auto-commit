@@ -10,13 +10,14 @@ try {
   $emptyGit = $lens.Count
   
   $gitLog = git log --stat --graph -1;
+  
   "----------------";
-  $length = ($gitStatus).Length
+  $length = $emptyGit
   "sum" + $length
   "----------------";
   
   if ($emptyGit -le 0) {
-    $length = ($gitStatus).Length
+
     "sum" + $length
     $gitStatus.GetType()
     "''.Length " + ''.Length
