@@ -41,10 +41,11 @@ try {
   }
   else { 
     _warn("🔴 Nothing happened"); 
+    # Read-Host "Press any key to continue ...";
   };
   
   #"debug: $state" 
-  Read-Host "Press any key to continue ...";
+  # Read-Host "Press any key to continue ...";
   Exit;
 }
 catch {
