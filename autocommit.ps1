@@ -9,7 +9,7 @@ $gitLog = git log --stat --graph -1;
 
 Clear-Host;
 
-function _info([String]$str, [String]$str2) {
+function _info([String]$str, [String]$str2 = $null) {
   Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $str2; $br;
 } 
 
