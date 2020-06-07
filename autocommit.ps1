@@ -8,7 +8,7 @@ try {
   $gitLog = git log --stat --graph -1;
   $gitCommit = git commit -am "⭐ Auto-Commit $time";
   $gitStatus = git status -s;
-  $gitEmpty = `$gitStatus`.Length ?? 0;
+  $gitEmpty = "$gitStatus".Length ?? 0;
 
   function _info([String]$str, [System.Object]$obj = $null) {
     Write-Host "[$time] [INFO]:" $str -ForegroundColor Cyan; $obj; $br;
