@@ -4,28 +4,28 @@ $time = Get-Date
 Clear-Host
 Clear-History
 
-"===== 🙄 Last Commit ====="
+"=== 🙄 Last Commit ==="
 git log --stat --graph -1 
 $br
 
-"===== 🤔 New Files ====="  
+"=== 🤔 New Files ==="  
 $state = git status -s 
 $state
 $br
 
 if ($state.Length) {
-  "===== ✈️ Start Upload ====="  
+  "=== ✈️ Start Upload ==="  
   git commit -am "⭐ Auto-Commit $time" 
   git push 
   $br
 
-  "===== ✔️ SUCCESS! ====="  
+  "=== ✔️ SUCCESS! ==="  
   $br
 }
 else { 
   Clear-Host 
-  "=====  Nothing happened  =====" 
-  "=====  Upload is Aborted!  =====" 
+  "=== ❌ Nothing happened ===" 
+  "=== Upload is Aborted! ===" 
   $br
 };
 
