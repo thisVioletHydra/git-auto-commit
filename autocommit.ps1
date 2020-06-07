@@ -6,7 +6,7 @@ try {
   $br = "";
   $time = Get-Date;
   $gitStatus = git status -s;
-  $emptyGit = $gitStatus.Length ?? 0;
+  $emptyGit = "$gitStatus".Length ?? 0;
   
   $gitLog = git log --stat --graph -1;
   
@@ -15,7 +15,7 @@ try {
   "sum" + $length
   "----------------";
   
-  if ($emptyGit -le 100) {
+  if ($emptyGit -le 0) {
 
     "sum" + $length
     $gitStatus.GetType()
