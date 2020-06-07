@@ -6,7 +6,7 @@ try {
   $br = "";
   $time = Get-Date;
   $gitLog = git log --stat --graph -1;
-  $gitCommit = git commit -am "⭐ Auto-Commit $time";
+  $gitCommit = git commit -am '⭐ Auto-Commit $time';
   $gitStatus = git status -s;
   $gitEmpty = "$gitStatus".Length ?? 0;
 
