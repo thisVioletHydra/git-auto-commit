@@ -11,17 +11,15 @@ $br
 $state = git status -s 
 $br
 
-
-
 if ($state.Length) {
   "=====  Start Upload  ====="  
-  git commit -am ' Auto-Commit' 
+  git commit -am '⭐ Auto-Commit' 
   git push 
   $br
 
   "=====  SUCCESS!  ====="  
   $br
-  "debug: $state" 
+  # "debug: $state" 
   Read-Host "Press any key to continue ... "
   Exit 
 }
@@ -32,6 +30,6 @@ else {
 };
 
 
-"debug: $state" 
+# "debug: $state" 
 Read-Host "Press any key to continue ... "
 Exit
