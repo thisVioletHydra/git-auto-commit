@@ -3,5 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "VioletHydra <mrG0bliN.tm@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": "false"
 }
