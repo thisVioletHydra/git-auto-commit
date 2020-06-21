@@ -1,7 +1,7 @@
 $gitLog = git log --stat --graph -1
 $gitStatus = git status -s
 $gitEmpty = "$gitStatus".Length
-$time = $(Get-Date -UFormat "[%m/%d/%Y] - %R")
+$time = $(Get-Date -UFormat "%R [%d/%m/%Y]")
 
 function Write-ColorizedMSG {
   param(
@@ -26,7 +26,7 @@ function Write-ColorizedMSG {
 }
 
 function Push-GitAutoCommit {
-  git commit -am "⭐️$($time) Autocommit"
+  git commit -am "$($time) ⭐️ Autocommit"
   git push
 } 
 
