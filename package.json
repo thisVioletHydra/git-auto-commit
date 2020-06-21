@@ -1,6 +1,6 @@
 {
   "name": "powershell-autocommit-git",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "VioletHydra <mrG0bliN.tm@gmail.com>",
   "license": "MIT",

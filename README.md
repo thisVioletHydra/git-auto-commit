@@ -1,4 +1,4 @@
-# git-auto-commit
-git-auto-commit
+# powershell-autocommit-git
+powershell-autocommit-git
 
 Autocommit for git system 
