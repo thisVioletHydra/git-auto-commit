@@ -1,7 +1,7 @@
 $gitLog = git log --stat --graph -1
 $gitStatus = git status -s
 $gitEmpty = "$gitStatus".Length
-$time = $(Get-Date -UFormat "%R [%d/%m/%Y]")
+$time = $(Get-Date -UFormat "[%d/%m/%Y] > %R")
 
 function Write-ColorizedMSG {
   param(
