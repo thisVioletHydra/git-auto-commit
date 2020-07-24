@@ -34,7 +34,9 @@ development/tmp
 
 # dist/
 
-
+out
+VERSION
+*.vsix
 
 jspm_packages
 logs
