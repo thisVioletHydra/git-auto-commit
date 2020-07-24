@@ -2,7 +2,15 @@
   "name": "git-autocommit",
   "version": "1.0.3",
   "main": "index.ps1",
-  "repository": "https://github.com/thisVioletHydra/git-autocommit",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/thisVioletHydra/git-autocommit"
+  },
+  "homepage": "https://github.com/thisVioletHydra/git-autocommit/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/thisVioletHydra/git-autocommit/issues",
+    "email": "mrG0bliN.tm@gmail.com"
+  },
   "author": "VioletHydra <mrG0bliN.tm@gmail.com>",
   "license": "MIT",
   "private": "false",
