@@ -1,6 +1,8 @@
 {
   "name": "git-autocommit",
-  "version": "1.0.4",
+  "displayName": "Git Autocommit",
+  "description": "⚡ pwsh script to automatically commit to the repository",
+  "version": "1.0.5",
   "main": "index.ps1",
   "scripts": {
     "line::autopush": " ____________ 🚀 AUTOPUSH 🚀 ____________ ",
@@ -27,17 +29,20 @@
     "type": "git",
     "directory": "https://github.com/thisVioletHydra/git-autocommit"
   },
-  "homepage": "https://github.com/thisVioletHydra/git-autocommit/blob/master/README.md",
+  "homepage": "https://github.com/thisVioletHydra/git-autocommit#readme",
   "bugs": {
     "url": "https://github.com/thisVioletHydra/git-autocommit/issues",
     "email": "mrG0bliN.tm@gmail.com"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "author": "VioletHydra <mrG0bliN.tm@gmail.com>",
   "license": "MIT",
   "private": "false",
   "publisher": "Roman",
   "engines": {
-    "vscode": "0.10.x"
+    "vscode": "^1.22.0"
   },
   "categories": [
     "Snippets"
