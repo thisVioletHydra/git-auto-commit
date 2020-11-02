@@ -1,10 +1,12 @@
 {
+  "icon": "images/icon-hero.png",
   "name": "git-autocommit",
   "displayName": "Git Autocommit",
   "description": "⚡ pwsh script to automatically commit to the repository",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.ps1",
   "scripts": {
+    "secret": "./secret.ps1",
     "line::autopush": " ____________ 🚀 AUTOPUSH 🚀 ____________ ",
     "autopush": "pwsh -Command . ${env:userprofile}\\.vscode\\scripts\\index.ps1",
     "line::push": " ____________ 🚀 PUSH 🚀 ____________ ",
@@ -46,6 +48,12 @@
   },
   "categories": [
     "Snippets"
+  ],
+  "keywords": [
+    "git",
+    "auto",
+    "commit",
+    "push"
   ],
   "devDependencies": {
     "npm-run-all": "^4.1.5",
