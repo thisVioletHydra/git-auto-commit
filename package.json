@@ -1,9 +1,9 @@
 {
-  "icon": "https://github.com/thisVioletHydra/git-autocommit/blob/master/images/icon-hero.png",
+  "icon": "images/icon-hero.png",
   "name": "git-autocommit",
   "displayName": "Git Autocommit",
   "description": "⚡ pwsh script to automatically commit to the repository",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.ps1",
   "scripts": {
     "secret": "./secret.ps1",
