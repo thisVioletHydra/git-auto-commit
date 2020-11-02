@@ -1,7 +1,28 @@
 {
   "name": "git-autocommit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.ps1",
+  "scripts": {
+    "line::autopush": " ____________ 🚀 AUTOPUSH 🚀 ____________ ",
+    "autopush": "pwsh -Command . ${env:userprofile}\\.vscode\\scripts\\index.ps1",
+    "line::push": " ____________ 🚀 PUSH 🚀 ____________ ",
+    "push": "yarn npm-run-all run:push::*",
+    "run:push::patch": "yarn version --patch",
+    "run:push::status": "git status -s",
+    "run:push::add": "git add . ",
+    "run:push::autopush": "yarn autopush",
+    "run:push::push": "git push --follow-tags",
+    "line::fetch": " ____________ 🚀 FETCH 🚀 ____________ ",
+    "fetch": "yarn npm-run-all run:fetch::*",
+    "run:fetch::fetch": "git fetch",
+    "run:fetch::merge": "git merge",
+    "run:fetch::yarn": "yarn",
+    "line::up": " ____________ 🚀 UP 🚀 ____________ ",
+    "up": "yarn-check -u && yarn",
+    "up:latest": "yarn upgrade-interactive --latest",
+    "line::main": " ____________ 🚀 MAIN 🚀 ____________ ",
+    "killnode": "taskkill /f /im node.exe /im RuntimeBroker.exe"
+  },
   "repository": {
     "type": "git",
     "directory": "https://github.com/thisVioletHydra/git-autocommit"
@@ -20,5 +41,9 @@
   },
   "categories": [
     "Snippets"
-  ]
+  ],
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "yarn-check": "^0.0.3"
+  }
 }
