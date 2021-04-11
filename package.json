@@ -4,7 +4,7 @@
     "line::main": " ____________ 🚀 MAIN 🚀 ____________ ",
     "killnode": "taskkill /f /im node.exe /im RuntimeBroker.exe",
     "line::autopush": " ____________ 🚀 AUTOPUSH 🚀 ____________ ",
-    "autopush": "pwsh -Command . ${env:userprofile}\\.vscode\\extensions\\roman.git-autocommit-1.2.0\\index.ps1",
+    "autopush": "pwsh -Command . ./index.ps1",
     "line::push": " ____________ 🚀 PUSH 🚀 ____________ ",
     "push": "yarn npm-run-all run:push::*",
     "run:push::patch": "yarn version --patch",
@@ -24,7 +24,7 @@
   "name": "git-autocommit",
   "displayName": "Git Autocommit",
   "description": "⚡ pwsh script to automatically commit to the repository",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.ps1",
   "repository": {
     "type": "git",
