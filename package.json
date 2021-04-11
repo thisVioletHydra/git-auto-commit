@@ -20,11 +20,16 @@
     "line::up": " ____________ 🚀 UP 🚀 ____________ ",
     "up": "yarn upgrade-interactive --latest"
   },
+  "activationEvents": [
+    "onLanguage:json",
+    "onLanguage:markdown",
+    "onLanguage:ps1"
+  ],
   "icon": "images/icon-hero.png",
   "name": "git-autocommit",
   "displayName": "Git Autocommit",
   "description": "⚡ pwsh script to automatically commit to the repository",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "index.ps1",
   "repository": {
     "type": "git",
